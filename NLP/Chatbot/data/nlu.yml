@@ -1,0 +1,63 @@
+version: "2.0"
+nlu:
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - all requests
+    - all
+
+- intent: register
+  examples: |
+    - I want to get register
+    - what is the registeration process
+    - Guide me with the registeration process
+    - How to get register for this ML course
+    - Register me
+    - Registeration process
+    - Please register me for AI program
+
+- intent: printer
+  examples: |
+    - printer
+    - printer
+    - 1   
+    
+
+- intent: bye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+    

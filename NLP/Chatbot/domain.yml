@@ -1,0 +1,116 @@
+version: "2.0"
+
+intents:
+ - greet
+ - bye
+ - bot_challenge
+ - register
+ - printer
+ - OutofPaper
+ - OutOfInk
+ - PaperJam
+ 
+actions:
+ - utter_greet
+ - utter_bye
+ - utter_iamabot
+ - validate_register_form
+ - action_submitregister
+ - validate_printer_form
+ - action_submitprinter
+ 
+ 
+forms:
+ register_form:
+  registeremail:
+   - type: from_text 
+
+ printer_form:
+  name:
+   - type: from_text
+  label:
+   - type: from_text
+  problem:
+   - type: from_text
+
+
+   
+slots:
+ registeremail:
+  type: text
+  influence_conversation: false
+ name:
+  type: text
+  influence_conversation: false
+ label:
+  type: text
+  influence_conversation: false
+ problem:
+  type: categorical
+  values:
+    - OutOfInk
+    - OutofPaper
+    - PaperJam
+  influence_conversation: false
+  
+
+
+     
+# entities:
+   # - projects  
+ 
+
+responses:
+   utter_greet:
+   - text: "Please select one of the below option"
+     buttons:
+      - title: "Printer Problem"
+        payload: /printer
+      - title: "New Request"
+        payload: /request
+      - title: "Other"
+        payload: /other
+   
+
+   utter_request:
+   - text: "Development Work In-Progress"
+
+   utter_other:
+   - text: "Development Work In-Progress"
+
+   utter_first_message:
+   - text: "How can I help you?"
+
+   utter_ask_name:
+   - text: "Please provide the Printer Name"
+
+   utter_ask_label:
+   - text: "Please describe the problem"
+
+   utter_ask_problem:
+   - text: "Please type the problem category <br> 1.OutofPaper <br> 2.OutOfInk <br> 3.PaperJam"
+
+
+   utter_ask_registeremail:
+   - text: "Please enter your email id. We will send you the process there"
+
+
+   utter_bye:
+   - text: "bye"
+
+  
+   utter_iamabot:
+   - text: "I am a Bot and I am happy to help you"
+
+   utter_details_thanks:
+   - text: "Thanks for providing the given details \nemailid is : {registeremail}"
+
+   utter_ack:
+   - text: "Thanks for providing the details.Your request has been submitted succesfully."
+
+   utter_default:
+   - text: "ok" 
+
+session_config:
+   session_expiration_time: 60
+   carry_over_slots_to_new_session: true
